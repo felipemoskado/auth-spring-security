@@ -1,0 +1,12 @@
+server.port: 8090
+
+spring:
+  datasource:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/example
+    username: spring
+    password: spring
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+  jpa.hibernate.ddl-auto: create-drop
