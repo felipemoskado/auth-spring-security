@@ -1,8 +1,8 @@
 package br.com.example.extension
 
-inline fun <T, R> T?.caseSome(block: () -> R): R? =
+inline fun <T, R> T?.caseSome(block: (T) -> R): R? =
   if (this != null) {
-    block()
+    block(this)
   } else {
     null
   }

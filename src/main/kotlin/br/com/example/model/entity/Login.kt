@@ -27,10 +27,7 @@ data class Login(
   val role: Role
 ) : UserDetails {
 
-  @Suppress("RecursivePropertyAccessor")
-  @get:Transient
-  val fullName: String?
-    get() = fullName ?: "$firstName $lastName"
+  val fullName: String = "$firstName $lastName"
 
   override fun getUsername(): String = email
 
@@ -45,4 +42,5 @@ data class Login(
   override fun isAccountNonExpired(): Boolean = false
 
   override fun isAccountNonLocked(): Boolean = false
+
 }
